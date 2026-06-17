@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For My Love 💕</title>
 
 <style>
+
 body{
     margin:0;
     min-height:100vh;
@@ -14,29 +16,25 @@ body{
     align-items:center;
     background:linear-gradient(135deg,#ffd6ea,#ffe8f3);
     font-family:sans-serif;
-    overflow:hidden;
 }
 
 .card{
     background:white;
     padding:30px;
-    border-radius:30px;
+    border-radius:25px;
     text-align:center;
     width:320px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
 }
 
 .dog{
     width:180px;
-    height:180px;
-    object-fit:cover;
     border-radius:20px;
     margin-bottom:15px;
 }
 
 h1{
     color:#ff5c9f;
-    font-size:22px;
 }
 
 .date-option{
@@ -55,14 +53,13 @@ button{
 }
 
 #yesBtn{
-    background:#ff69b4;
+    background:#ff6eb4;
     color:white;
 }
 
 #noBtn{
-    background:#c084fc;
+    background:#c58cff;
     color:white;
-    position:relative;
 }
 
 .message{
@@ -74,21 +71,22 @@ button{
 
 .heart{
     position:fixed;
-    font-size:24px;
-    animation:floatUp 2s linear forwards;
+    font-size:30px;
+    animation:float 2s linear forwards;
     pointer-events:none;
 }
 
-@keyframes floatUp{
+@keyframes float{
     from{
         opacity:1;
         transform:translateY(0);
     }
     to{
         opacity:0;
-        transform:translateY(-250px);
+        transform:translateY(-200px);
     }
 }
+
 </style>
 </head>
 
@@ -125,6 +123,7 @@ button{
 </div>
 
 <script>
+
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const message = document.getElementById("message");
@@ -138,21 +137,10 @@ yesBtn.addEventListener("click",()=>{
         alert("日付を選んでね💕");
         return;
     }
-message.innerHTML =
-"🥰 " + selected.value +
-" に決定！<br><br>LINEを開くよ💕";
 
-const text =
-"サラへ💖\n\nデートの日は " +
-selected.value +
-" にしたよ🥰🐶💕";
-
-window.location.href =
-"line://msg/text/" +
-encodeURIComponent(text);setTimeout(()=>{
-
-
-},1000);    
+    message.innerHTML =
+    "🥰 " + selected.value +
+    " に決定！<br><br>大好きだよ❤️";
 
     for(let i=0;i<30;i++){
 
@@ -174,6 +162,18 @@ encodeURIComponent(text);setTimeout(()=>{
             heart.remove();
         },2000);
     }
+
+    const text =
+    "サラへ💖\n\nデートの日は " +
+    selected.value +
+    " にしたよ🥰💕";
+
+    window.open(
+        "https://line.me/R/msg/text/?" +
+        encodeURIComponent(text),
+        "_blank"
+    );
+
 });
 
 noBtn.addEventListener("mouseover",()=>{
@@ -185,7 +185,9 @@ noBtn.addEventListener("mouseover",()=>{
 
     noBtn.style.top =
     Math.random()*(window.innerHeight-60)+"px";
+
 });
+
 </script>
 
 </body>
