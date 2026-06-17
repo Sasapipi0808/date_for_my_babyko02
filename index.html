@@ -139,10 +139,17 @@ yesBtn.addEventListener("click",()=>{
         return;
     }
 message.innerHTML =
-“🥰 “ + selected.value +
-“ に決定！一緒に素敵な思い出を作ろうね🐶💕”;
+"🥰 " + selected.value +
+" に決定！<br><br>LINEを開くよ💕";
 
-setTimeout(()=>{
+const text =
+"サラへ💖\n\nデートの日は " +
+selected.value +
+" にしたよ🥰🐶💕";
+
+window.location.href =
+"line://msg/text/" +
+encodeURIComponent(text);setTimeout(()=>{
 
 const text =
 “デートの日は “ +
