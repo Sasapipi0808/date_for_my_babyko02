@@ -138,10 +138,24 @@ yesBtn.addEventListener("click",()=>{
         alert("日付を選んでね💕");
         return;
     }
+message.innerHTML =
+“🥰 “ + selected.value +
+“ に決定！一緒に素敵な思い出を作ろうね🐶💕”;
 
-    message.innerHTML =
-    "🥰 " + selected.value +
-    " に決定！<br><br>一緒に素敵な思い出を作ろうね🐶💕";
+setTimeout(()=>{
+
+const text =
+“デートの日は “ +
+selected.value +
+“ にしたよ💖🥰”;
+
+window.open(
+“https://line.me/R/msg/text/?” +
+encodeURIComponent(text),
+“_blank”
+);
+
+},1000);    
 
     for(let i=0;i<30;i++){
 
